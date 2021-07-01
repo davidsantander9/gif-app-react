@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { getGifs } from '../helpers/getGifs';
 import GifGridItem from './GifGridItem';
 
 const GifGrid = ({ category }) => {
@@ -6,27 +7,10 @@ const GifGrid = ({ category }) => {
     const [images, setImages] = useState([]); 
 
     useEffect( () => {
-        getGifs();
-    }, []);
+        getGifs(category)
+        .then(setImages)
+    }, [category]);
     // Ese arreglo es el component did mount
-
-    const getGifs = async() => {
-        const url = `http://api.giphy.com/v1/gifs/search?q=${encodeURI( category )}&limit=10&api_key=z8L84cRhMVVOIbQuduH0R8OxY88PESaX`;
-        const resp = await fetch( url );
-        const { data } = await resp.json();
-
-        const gifs = data.map( img => {
-            return {
-                id: img.id,
-                title: img.title,
-                url: img.images?.downsized_medium.url
-            }
-        });
-
-        setImages( gifs );
-        
-    }
-
 
     return (
         <>

@@ -1,20 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+
+import AddCategory from './components/AddCategory';
 
 const GifExpertApp = () => {
 
-    // const categories = ['One Punch', 'Samurai X', 'Dragon ball'];
-    const [categories , setCatergories ] = useState(['One Punch', 'Samurai X', 'Dragon ball']);
+    const [categories , setCategories ] = useState(['One Punch', 'Samurai X', 'Dragon ball']);
 
-    const handleAdd = () => {
+    // const handleAdd = () => {
         // setCatergories( cats => [...cats, 'Naruto']);
-        setCatergories([...categories, 'Naruto'])
-    }
+    //     setCatergories([...categories, 'Naruto'])
+    // }
 
+    
     return (
         <>
             <h2>GifExpertApp</h2>
+            <AddCategory setCategories={ setCategories }/>
             <hr/>
-            <button onClick={ handleAdd }>Agregar</button>
+            {/* <button onClick={ handleAdd }>Agregar</button> */}
             
             <ol>
                 {

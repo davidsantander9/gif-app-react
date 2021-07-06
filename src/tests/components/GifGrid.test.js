@@ -23,13 +23,18 @@ describe('<GifGrid/>  test', () => {
             id: 'avas',
             url: 'https://localhost/cosa.png',
             title: 'A thing'
-        }] 
+        }];
+
         useFetchGifs.mockReturnValue({
             data: gifs,
-            loading: true 
+            loading: false 
         });
+
         const wrapper = shallow(<GifGrid category={ category } />);
         expect( wrapper ).toMatchSnapshot();
+        expect( wrapper.find('p').exists() ).toBe(false);
+        expect( wrapper.find('GifGridItem').length ).toBe( gifs.length );
+
     });
     
     

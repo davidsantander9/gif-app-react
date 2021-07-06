@@ -16,22 +16,6 @@ exports[`<GifGrid/>  test should correctly display the component <GifGrid/> 1`] 
 </Fragment>
 `;
 
-exports[`<GifGrid/>  test should correctly display the component 1`] = `
-<Fragment>
-  <h3
-    className="animate__animated animate__flash animate__delay-1s"
-  >
-    Batman
-  </h3>
-  <p>
-    Loading
-  </p>
-  <div
-    className="card-grid"
-  />
-</Fragment>
-`;
-
 exports[`<GifGrid/>  test should show when loads images 1`] = `
 <Fragment>
   <h3
@@ -39,9 +23,6 @@ exports[`<GifGrid/>  test should show when loads images 1`] = `
   >
     Batman
   </h3>
-  <p>
-    Loading
-  </p>
   <div
     className="card-grid"
   >

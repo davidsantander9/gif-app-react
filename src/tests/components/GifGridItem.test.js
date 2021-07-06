@@ -30,9 +30,5 @@ describe('<GifGridItem/>  test', () => {
         expect( className.includes('animate__fadeIn') ).toBe(true);
     })
     
-    
-
-    
-
 
 });
